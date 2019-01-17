@@ -11,47 +11,34 @@
 
     <body>
         <div id="mainHeaderDiv">
-            <p id="mainHeader">Best pet Pics</p>
+            <p id="mainHeader">Pokemon Search</p>
         </div>
         <div class="button-container">
             <div class="button-center">
-                <label for="randomDog">Search for a random dog pic!</label>
-                <form id="randomDog">
+                <form id="pokemonByName">
+                    <label for="pokemonName">Search for a random pokemon by name!</label>
+                    <input id="pokemonName" type="text" required></input>
                     <button type="submit" class="button">Submit</button>
                 </form>
             </div>
             <div class="button-center">
-                <label for="randomBreed">Search for a random dog breed pic!</label>
-                <form id="randomBreed">
-                    <select id="breedList" name="breeds" form="randomBreed">
-
-
-                    </select>
+                <form id="randomPokemon">
+                    <label for="randomPokemon">Search for a random pokemon!</label>
                     <button type="submit" class="button">Submit</button>
                 </form>
             </div>
             <div class="button-center">
-                <label for="randomDogGiphy">Search for a random dog Gyphy!</label>
-                <form id="randomDogGiphy">
-                    <button type="submit" class="button">Submit</button>
-                </form>
-            </div>
-            <div class="button-center">
-                <label for="randomCat">Search for a random cat pic!</label>
-                <form id="randomCat">
-                    <button type="submit" class="button">Submit</button>
-                </form>
-            </div>
-            <div class="button-center">
-                <label for="randomCatGiphy">Search for a random cat Gyphy!</label>
-                <form id="randomCatGiphy">
-                    <button type="submit" class="button">Submit</button>
-                </form>
-            </div>
+                    <form id="typePokemon">
+                        <label for="pokemonType">Search for a type pokemon!</label>
+                        <input id="pokemonType" type="text" required></input>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
         </div>
         <hr class="mainHR">
         <div id="imgDiv">
-            <img id="dogImgOutput" src="">
+            <p id="pokemonNameOutput"></p>
+            <img id="pokemonOutput" src="">
         </div>
         <hr class="mainHR">
     </body>
