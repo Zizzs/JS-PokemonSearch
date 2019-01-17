@@ -15,6 +15,19 @@ $(document).ready(function () {
             let body = JSON.parse(response);
             let img = new Image();
             img.src = body.sprites.front_default;
+            $("#pokemonNameOutput").text(name.charAt(0).toUpperCase() + name.slice(1));
+            document.getElementById("pokemonOutput").src = img.src;
+        })
+    });
+
+    $("#pokemonGif").submit(function(event) {
+        event.preventDefault();
+        let pokemon = new Pokemon();
+        let promise = pokemon.getRandomPokemonGif();
+        promise.then(function(response) {
+            let body = JSON.parse(response);
+            let img = new Image();
+            img.src = body.data.images.original.url;
             document.getElementById("pokemonOutput").src = img.src;
         })
     });
@@ -32,7 +45,7 @@ $(document).ready(function () {
             let pokemonName = body.forms[0].name;
             document.getElementById("pokemonOutput").src = img.src;
             console.log(pokemonName);
-            $("#pokemonNameOutput").text(pokemonName);
+            $("#pokemonNameOutput").text(pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1));
         })
     });
 
@@ -50,16 +63,16 @@ $(document).ready(function () {
             let newPokemon = pokemonList[num + 1];
             let name = newPokemon.pokemon.name
             return pokemon.getPokemonByName(name);
-        })
-        .then(function(response) {
+            })
+            .then(function(response) {
             let body = JSON.parse(response);
             let img = new Image();
             img.src = body.sprites.front_default;
             let pokemonName = body.forms[0].name;
             document.getElementById("pokemonOutput").src = img.src;
             console.log(pokemonName);
-            $("#pokemonNameOutput").text(pokemonName);
-        });     
+            $("#pokemonNameOutput").text(pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1));
+            });     
     });
 });
 
